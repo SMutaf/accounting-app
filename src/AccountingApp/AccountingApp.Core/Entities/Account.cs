@@ -6,6 +6,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
+using AccountingApp.Core.Enums;
 namespace AccountingApp.Core.Entities
 {
     public class Account : BaseEntity
