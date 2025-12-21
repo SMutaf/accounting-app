@@ -12,6 +12,9 @@ namespace AccountingApp.Data.Context
 {
     public class AccountingAppDbContext : DbContext
     {
+        public AccountingAppDbContext(DbContextOptions<AccountingAppDbContext> options) : base(options)
+        {
+        }
         public DbSet<Account> Accounts { get; set; }
 
         public DbSet<Customer> Customers { get; set; }
