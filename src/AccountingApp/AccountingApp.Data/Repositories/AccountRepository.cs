@@ -12,7 +12,7 @@ namespace AccountingApp.Data.Repositories
 {
     public class AccountRepository : Repository<Account>, IAccountRepository
     {
-        public AccountRepository(AccountingDbContext context) : base(context)
+        public AccountRepository(AccountingAppDbContext context) : base(context)
         {
         }
 
