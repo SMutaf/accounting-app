@@ -14,6 +14,7 @@ namespace AccountingApp.Service.Mappings
         public MappingProfile() 
         {
             CreateMap<Account,AccountDto>().ReverseMap();
+            CreateMap<Customer, CustomerDto>().ReverseMap();
         }
     }
 }
