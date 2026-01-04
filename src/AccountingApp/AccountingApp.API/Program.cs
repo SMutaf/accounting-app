@@ -23,6 +23,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IInvoiceService, InvoiceService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
