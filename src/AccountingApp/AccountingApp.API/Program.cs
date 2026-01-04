@@ -1,5 +1,8 @@
 using AccountingApp.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using AccountingApp.Service.Mappings;
+using AccountingApp.Services.Interfaces;
+using AccountingApp.Services.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AccountingAppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 var app = builder.Build();
 
