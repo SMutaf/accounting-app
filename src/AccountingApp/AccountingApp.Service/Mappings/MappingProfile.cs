@@ -17,6 +17,14 @@ namespace AccountingApp.Service.Mappings
             CreateMap<Customer, CustomerDto>().ReverseMap();
             CreateMap<Invoice, InvoiceDto>().ReverseMap();
             CreateMap<Transaction, TransactionDto>().ReverseMap();
+
+            CreateMap<Invoice, InvoiceDto>()
+               .ReverseMap()
+               .ForMember(dest => dest.Customer, opt => opt.Ignore());
+
+            CreateMap<TransactionLine, TransactionLineDto>()
+                .ForMember(dest => dest.AccountName, opt => opt.MapFrom(src => src.Account.Name))
+                .ForMember(dest => dest.AccountCode, opt => opt.MapFrom(src => src.Account.Code));
         }
     }
 }

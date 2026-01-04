@@ -25,6 +25,7 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IReportService, ReportService>();
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -33,6 +34,9 @@ builder.Services.AddScoped<IAccountRepository, AccountingApp.Data.Repositories.A
 builder.Services.AddScoped<ICustomerRepository, AccountingApp.Data.Repositories.CustomerRepository>();
 builder.Services.AddScoped<IInvoiceRepository, AccountingApp.Data.Repositories.InvoiceRepository>();
 builder.Services.AddScoped<ITransactionRepository, AccountingApp.Data.Repositories.TransactionRepository>();
+
+builder.Services.AddEndpointsApiExplorer();
+
 
 var app = builder.Build();
 
